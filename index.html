@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sleep Habit Tracker</h1>
+            <button id="themeToggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main>
+            <section class="sleep-form">
+                <h2>Log Your Sleep</h2>
+                <form id="sleepForm">
+                    <div class="form-group">
+                        <label for="bedtime">Bedtime:</label>
+                        <input type="time" id="bedtime" name="bedtime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wakeup">Wake-up Time:</label>
+                        <input type="time" id="wakeup" name="wakeup" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quality">Sleep Quality:</label>
+                        <div class="star-rating">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes (optional):</label>
+                        <textarea id="notes" name="notes" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Log Sleep</button>
+                </form>
+            </section>
+
+            <section class="dashboard">
+                <h2>Sleep Dashboard</h2>
+                <div class="streak-summary">
+                    <h3>Current Streak</h3>
+                    <p id="streakCount">0 days</p>
+                </div>
+                <div class="sleep-history">
+                    <h3>Recent Sleep Logs</h3>
+                    <div id="sleepLogs" class="sleep-logs"></div>
+                </div>
+            </section>
+        </main>
+
+        <div id="motivationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="motivationMessage"></p>
+            </div>
+        </div>
+
+        <div id="reminderModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Don't Forget to Log Your Sleep!</h3>
+                <p>It's been a few days since your last sleep log. Keep up the good work by logging your sleep today!</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
